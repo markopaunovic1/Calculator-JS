@@ -1,5 +1,6 @@
 const buttonElements = document.getElementsByClassName('button');
 const result = document.getElementById('result');
+const resetCalc = document.getElementById('clear');
 let firstInput = true;
 
 //const signElement = document.getElementsByClassName('calc_sign');
@@ -22,8 +23,14 @@ for(const buttonElement of buttonElements ) {
 }
 
 const buttonListener = (button) => {
+
     if(button.innerText == '=') {
         calculate();
+        console.log("prints result");
+    } else if (button.innerText == 'C') {
+        clearResult();
+        result.innerText = '';
+        console.log("prints number");
     } else {
         display(button.innerText);
     }
